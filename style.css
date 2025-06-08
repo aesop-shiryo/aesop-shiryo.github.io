@@ -1,0 +1,397 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全体のスタイル */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #4a6eb5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2d4373;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    text-align: center;
+    color: #2d4373;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    padding: 0.5rem 0;
+    position: relative;
+    font-weight: 500;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4a6eb5;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #2d4373;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #2d4373;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #4a6eb5;
+    margin: 1.5rem 0 0.8rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    background-color: #4a6eb5;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2d4373;
+    color: white;
+}
+
+/* トップページ：ヒーローセクション */
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero h2 {
+    border-bottom: none;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-image {
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* トップページ：コンテンツ概要 */
+.content-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-box h3 {
+    margin-top: 0;
+}
+
+/* トップページ：最新情報 */
+.update {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.update .date {
+    display: inline-block;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.update h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* イソップ資料ページ */
+.paper-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.abstract {
+    margin-bottom: 1.2rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4a6eb5;
+}
+
+.download-btn::before {
+    content: "📄";
+    margin-right: 0.5rem;
+}
+
+.resources-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.resource-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.author {
+    margin-left: 20px;
+}
+
+/* 関連情報ページ */
+.column-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.column-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.column-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* 主催者情報ページ */
+.organizer-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.profile-image {
+    border-radius: 50%;
+}
+
+.position, .affiliation {
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.research-group, .research-activities, .contact-info {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.member-list {
+    list-style-position: inside;
+    margin: 1rem 0;
+}
+
+.member-list li {
+    margin-bottom: 0.5rem;
+}
+
+.activity {
+    margin-bottom: 1.5rem;
+}
+
+.activity h4 {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #f0f0f0;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    .organizer-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .organizer-image {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-image {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .content-boxes, .resources-list {
+        grid-template-columns: 1fr;
+    }
+}
