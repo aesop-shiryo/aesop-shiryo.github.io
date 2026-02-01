@@ -71,7 +71,7 @@
         </section>
         <section class="recent-updates">
             <h2>連絡先</h2>
-            <p><strong>メール：</strong> 準備中</p>
+            <p><strong>メール：</strong><span id="email-link">読み込み中...</span></p>
         </section>
         
     </main>
@@ -80,4 +80,16 @@
         <p>&copy; 2025 イソップ資料. All Rights Reserved.</p>
     </footer>
 </body>
+<script>
+  (function() {
+    const user = "aesopshiryo";
+    const domain = "gmail.com";
+    
+    const target = document.getElementById('email-link');
+    const address = user + "@" + domain;
+    
+    // リンクを生成
+    target.innerHTML = `<a href="mailto:${address}">${address}</a>`;
+  })();
+</script>
 </html>
